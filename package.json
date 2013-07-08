@@ -1,0 +1,30 @@
+{
+  "name": "component-styl-plugin",
+  "version": "1.0.0",
+  "description": "Highly customizable Styl compiler plugin for Component",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rschmukler/component-styl-plugin"
+  },
+  "keywords": [
+    "component",
+    "styl",
+    "rework"
+  ],
+  "author": "Ryan Schmukler",
+  "license": "MIT",
+  "dependencies": {
+    "batch": "~0.3.2",
+    "styl": "0.2.2",
+    "debug": "~0.7.2"
+  },
+  "readmeFilename": "README.md",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {}
+}
