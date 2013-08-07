@@ -19,7 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "batch": "~0.3.2",
-    "styl": "0.2.2",
+    "styl": "0.2.3",
     "debug": "~0.7.2"
   },
   "readmeFilename": "README.md",
