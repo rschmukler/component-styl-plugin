@@ -1,12 +1,12 @@
-# Component Stylus Plugin
+# Component Styl Plugin
 
-Plugin for [component/builder](http://github.com/component/builder.js) to enable the direct use of stylus with components.
+Plugin for [component/builder](http://github.com/component/builder.js) to enable the direct use of styl/rework with components.
 
 
 ## Usage Example
 
     var Builder  = require('component-builder'),
-    stylusPlugin = require('component-stylus-plugin');
+    stylPlugin = require('component-styl-plugin');
 
     var builder = new Builder('.');
     builder.copyAssetsTo('public');
@@ -19,51 +19,17 @@ Plugin for [component/builder](http://github.com/component/builder.js) to enable
 
 ## Options
 
-Component Stylus Plugin is highly customizable and exhibits a lot of the options that stylus itself has.
+Component Styl Plugin is highly customizable and exhibits a lot of the options that styl itself has, and even some it doesn't.
 
-### Compression (default false)
+### Includes
 
-Minfies the output of the stylus files that are being compiled
+Include the selected files before compiling a file. Useful for things like
+variables and mixins.
 
-    stylusPlugin.compress = false
+    stylPlugin.includes = ['./pages/global/stylDefinitions.styl'];
 
-### Line Numbers (default true)
+### Plugins
 
-Adds line numbers as comments to the CSS being output. Very helpful for debugging.
+Add rework plugins to the styl plugin.
 
-    stylusPlugin.linenos = true
-
-### Firebug Support (default false)
-
-Adds support for Firebug's Stylus plugin for Firefox
-
-    stylusPlugin.firebug = false
-
-### Imports (default empty)
-
-Allows you to import stylus files into your stylus files before compiling. Useful for custom mixins or global
-variable definitions. You must provide a full path to the files.
-
-    stylusPlugin.imports = [__dirname + '/../globals/variableDefinitions.styl',
-                            __dirname + '/../globals/customMixins.styl']
-
-### Include CSS (default false)
-
-Allow `@import` statements to load up regular CSS.
-
-    stylusPlugin.includeCSS = false
-
-### Paths (default empty)
-
-Add additional paths to be searched for `@import` statements
-
-    stylusPlugin.paths = [__dirname + '/../junkDrawer',
-                          __dirname + '/../someOtherPlace']
-
-### Plugins (default empty)
-
-Load up any additional plugins that you want to use.
-
-    var nib = require('nib')();
-
-    stylusPlugin.plugins.push(nib);
+    stylPlugin.plugins = [rework.references(), require('rework-variant')()];
